@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-lwiywamk-gitops
+  description: This is GitOps manifest for go-lwiywamk   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-lwiywamk
+    backstage.io/kubernetes-id: go-lwiywamk 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-lwiywamk
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-lwiywamk
